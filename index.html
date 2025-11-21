@@ -4,15 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YoRHa Archive // System Entry</title>
-    
+
     <!-- Fonts: Cormorant Garamond (Serif) and Share Tech Mono (UI/Tech) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Tailwind Config -->
     <script>
       tailwind.config = {
@@ -20,43 +23,45 @@
           extend: {
             colors: {
               yorha: {
-                bg: '#2a2a2a',         // Dark slate gray background
-                panel: '#333333',      // Slightly lighter panel
-                beige: '#dad4bb',      // Classic YoRHa UI beige
-                darkBeige: '#57544a',  // Darker sepia for inactive elements
-                text: '#e8e8e8',       // Soft white
-                alert: '#cd664d',      // Muted red
-              }
+                bg: "#2a2a2a", // Dark slate gray background
+                panel: "#333333", // Slightly lighter panel
+                beige: "#dad4bb", // Classic YoRHa UI beige
+                darkBeige: "#57544a", // Darker sepia for inactive elements
+                text: "#e8e8e8", // Soft white
+                alert: "#cd664d", // Muted red
+              },
             },
             fontFamily: {
-              serif: ['"Cormorant Garamond"', 'serif'],
-              mono: ['"Share Tech Mono"', 'monospace'],
+              serif: ['"Cormorant Garamond"', "serif"],
+              mono: ['"Share Tech Mono"', "monospace"],
             },
             backgroundImage: {
-              'scanlines': 'repeating-linear-gradient(0deg, transparent, transparent 2px, #000000 3px, #000000 3px)',
+              scanlines:
+                "repeating-linear-gradient(0deg, transparent, transparent 2px, #000000 3px, #000000 3px)",
             },
             animation: {
-              'glitch-skew': 'glitchSkew 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite',
-              'fade-in': 'fadeIn 2s ease-out forwards',
-              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              "glitch-skew":
+                "glitchSkew 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite",
+              "fade-in": "fadeIn 2s ease-out forwards",
+              "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
             },
             keyframes: {
               glitchSkew: {
-                '0%': { transform: 'translate(0)' },
-                '20%': { transform: 'translate(-2px, 2px)' },
-                '40%': { transform: 'translate(-2px, -2px)' },
-                '60%': { transform: 'translate(2px, 2px)' },
-                '80%': { transform: 'translate(2px, -2px)' },
-                '100%': { transform: 'translate(0)' },
+                "0%": { transform: "translate(0)" },
+                "20%": { transform: "translate(-2px, 2px)" },
+                "40%": { transform: "translate(-2px, -2px)" },
+                "60%": { transform: "translate(2px, 2px)" },
+                "80%": { transform: "translate(2px, -2px)" },
+                "100%": { transform: "translate(0)" },
               },
               fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              }
-            }
-          }
-        }
-      }
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+            },
+          },
+        },
+      };
     </script>
     <style>
       /* Custom Global Styles for Noise and Scrollbar */
@@ -65,7 +70,7 @@
         cursor: crosshair;
         overflow-x: hidden;
       }
-      
+
       /* The Noise Overlay */
       .noise-overlay {
         position: fixed;
@@ -88,10 +93,19 @@
         height: 100vh;
         pointer-events: none;
         z-index: 49;
-        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+        background: linear-gradient(
+            rgba(18, 16, 16, 0) 50%,
+            rgba(0, 0, 0, 0.25) 50%
+          ),
+          linear-gradient(
+            90deg,
+            rgba(255, 0, 0, 0.06),
+            rgba(0, 255, 0, 0.02),
+            rgba(0, 0, 255, 0.06)
+          );
         background-size: 100% 2px, 3px 100%;
       }
-      
+
       /* Selection color */
       ::selection {
         background: #dad4bb;
@@ -103,29 +117,21 @@
         width: 6px;
       }
       ::-webkit-scrollbar-track {
-        background: #2a2a2a; 
+        background: #2a2a2a;
       }
       ::-webkit-scrollbar-thumb {
-        background: #57544a; 
+        background: #57544a;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #dad4bb; 
+        background: #dad4bb;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
-  }
-}
-</script>
-</head>
+    <!-- Note: importmap removed to allow Vite to resolve local dependencies during development -->
+  </head>
   <body>
     <div id="root"></div>
-    <!-- Overlay Elements -->
+    <script type="module" src="/index.tsx"></script>
+
     <div class="noise-overlay"></div>
     <div class="scanline-overlay"></div>
   </body>
